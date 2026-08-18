@@ -57,9 +57,9 @@ window.SITE_CONFIG = {
     accent: "Hold Attention",
     // The \n breaks are kept as written: the hero paragraph is pre-line.
     intro:
-      "Video Editor & AI Video Creator crafting content for creators and brands worldwide. AEVY TV certified.\n" +
-      "Currently at Emergent, leading video across performance, influencer, and launch formats including a User Story featured in their Series C Unicorn announcement and the launch films for Vibecon, Bengaluru.\n" +
-      "Past work: 300+ finance videos behind a 300K+ following, and YouTube edits with 10M+ views.\n" +
+      "Video Editor & AI Video Creator crafting content for creators and brands worldwide. AEVY TV certified.\n\n" +
+      "Currently at Emergent, leading video across performance, influencer, and launch formats including a User Story featured in their Series C Unicorn announcement and the launch films for Vibecon, Bengaluru.\n\n" +
+      "Past work: 300+ finance videos behind a 300K+ following, and YouTube edits with 10M+ views.\n\n" +
       "Let's make something. Give me a nudge.",
     portrait: "assets/media/aman-portrait.jpeg",
   },
