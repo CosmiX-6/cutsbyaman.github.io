@@ -602,13 +602,47 @@
 
   /* --- Text injection ---------------------------------------------------- */
 
+  // Turns the phrases in CFG.links into anchors inside copy that was just
+  // bound as plain text, so config stays free of markup.
+  function linkify(node) {
+    var map = CFG.links || {};
+    var phrases = Object.keys(map).filter(function (phrase) {
+      return node.textContent.indexOf(phrase) > -1;
+    });
+    if (!phrases.length) return;
+
+    // A flex or grid parent trims the whitespace on either side of each child,
+    // so "Certified by AEVY TV" would lose its space once the anchor split the
+    // text in two. Keeping the copy inside one inline wrapper avoids that.
+    var wrap = el("span", { text: node.textContent });
+    node.textContent = "";
+    node.appendChild(wrap);
+
+    phrases.forEach(function (phrase) {
+      var walker = document.createTreeWalker(wrap, NodeFilter.SHOW_TEXT, null);
+      var hits = [], t;
+      while ((t = walker.nextNode())) {
+        if (t.nodeValue.indexOf(phrase) > -1) hits.push(t);
+      }
+      hits.forEach(function (textNode) {
+        var at = textNode.nodeValue.indexOf(phrase);
+        var tail = textNode.splitText(at);
+        tail.nodeValue = tail.nodeValue.slice(phrase.length);
+        textNode.parentNode.insertBefore(el("a", {
+          class: "copy-link", href: map[phrase],
+          target: "_blank", rel: "noopener", text: phrase,
+        }), tail);
+      });
+    });
+  }
+
   function fillText() {
     document.querySelectorAll("[data-text]").forEach(function (node) {
       var value = CFG;
       node.getAttribute("data-text").split(".").forEach(function (key) {
         value = value == null ? value : value[key];
       });
-      if (value != null) node.textContent = value;
+      if (value != null) { node.textContent = value; linkify(node); }
     });
 
     document.querySelectorAll("[data-href]").forEach(function (node) {

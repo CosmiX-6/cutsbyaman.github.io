@@ -238,6 +238,17 @@ h1, h2, h3, h4 {
    paragraph keeps them. */
 .hero__bio { white-space: pre-line; }
 
+/* Phrases from config.links. Brighter than the muted copy they sit in, which
+   is the point: the credential should be findable. */
+.copy-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+.copy-link:hover { text-decoration-color: currentColor; }
+
 
 .hero__card {
   position: relative;

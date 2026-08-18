@@ -31,6 +31,13 @@ window.SITE_CONFIG = {
     copyright: "© {year} Aman. All rights reserved.",
   },
 
+  /* --- Links in copy ---------------------------------------------------- */
+  // Any phrase listed here becomes a link wherever it shows up in bound copy,
+  // so the credential only needs writing once.
+  links: {
+    "AEVY TV": "https://www.aevytv.com/",
+  },
+
   /* --- Opening animation ------------------------------------------------ */
   // The black title card that draws the signature before the page appears.
   // Its wording and the signature artwork live in index.html.
