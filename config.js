@@ -48,10 +48,11 @@ window.SITE_CONFIG = {
     // The word in "accent" is set in the serif italic face.
     headline: "Turning Raw Footage Into Stories That",
     accent: "Hold Attention",
+    // The \n breaks are kept as written: the hero paragraph is pre-line.
     intro:
-      "Video Editor & AI Video Creator with 4+ years crafting content for creators and brands worldwide. AEVY TV certified. " +
-      "Currently at Emergent, leading video across performance, influencer, and launch formats including a User Story featured in their Series C Unicorn announcement and the launch films for Vibecon, Bengaluru. " +
-      "Past work: 300+ finance videos behind a 300K+ following, and YouTube edits with 10M+ views. " +
+      "Video Editor & AI Video Creator crafting content for creators and brands worldwide. AEVY TV certified.\n" +
+      "Currently at Emergent, leading video across performance, influencer, and launch formats including a User Story featured in their Series C Unicorn announcement and the launch films for Vibecon, Bengaluru.\n" +
+      "Past work: 300+ finance videos behind a 300K+ following, and YouTube edits with 10M+ views.\n" +
       "Let's make something. Give me a nudge.",
     portrait: "assets/media/aman-portrait.jpeg",
   },
