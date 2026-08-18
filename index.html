@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuts by Aman - Video Editor &amp; Motion Designer</title>
+  <meta name="description"
+    content="Hey, I'm Aman. I edit short-form and long-form video for creators and brands across the globe - hooks that lift CTR, retention that holds.">
+
+  <meta property="og:title" content="Cuts by Aman - Video Editor &amp; Motion Designer">
+  <meta property="og:description"
+    content="Short form built to stop the scroll, long form built to keep people watching.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/media/aman-portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/media/aman-portrait.jpg">
+  <link rel="preload" href="assets/fonts/satoshi-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrumentserif-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <script src="config.js"></script>
+  <script>
+    // Runs before the body paints so the title card never flashes in or out.
+    (function () {
+      var doc = document.documentElement;
+      var cfg = (window.SITE_CONFIG || {}).intro || {};
+      var skip = cfg.enabled === false;
+      try {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) skip = true;
+        if (cfg.oncePerSession) {
+          if (sessionStorage.getItem("introSeen")) skip = true;
+          else sessionStorage.setItem("introSeen", "1");
+        }
+      } catch (e) { /* private mode, carry on */ }
+      doc.classList.add(skip ? "no-intro" : "has-intro");
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ===================== Opening animation ===================== -->
+  <div class="intro" id="intro" role="presentation">
+    <div class="intro__row">
+      <span class="intro__text">
+        <span class="intro__word" style="--i:0">Hey,</span>
+        <span class="intro__word" style="--i:1">This</span>
+        <span class="intro__word" style="--i:2">is</span>
+      </span>
+      <!-- One path per pen stroke. SVG restarts a dash pattern on every subpath,
+           so a single multi-part path would draw its letters out of order. Each
+           stroke instead carries its own delay and duration, sized to its
+           length, which adds up to one continuous 1.7s signature. -->
+      <svg class="intro__sig" viewBox="0 0 520 200" fill="none" aria-hidden="true">
+        <defs>
+          <path id="intro-track"
+            d="M70 158C96 110 140 52 168 34C176 29 183 35 187 49C195 79 201 117 207 150
+               M96 118C130 105 176 105 214 114
+               M216 150C212 120 224 103 238 106C250 109 250 130 248 150C246 120 258 103 272 106C284 109 284 130 282 150C281 134 290 108 322 106C310 96 292 106 291 124C290 142 306 152 318 142C324 137 324 118 322 106C321 122 321 140 326 150C325 126 335 103 349 106C361 109 361 130 359 150
+               M359 150C390 155 425 151 455 143C478 137 492 128 504 116" />
+        </defs>
+
+        <g stroke-linecap="round" stroke-linejoin="round">
+          <!-- The capital: up the left leg, over the apex, down the right. -->
+          <path class="intro__stroke" pathLength="1" style="--delay:.70s;--dur:.49s"
+            d="M70 158C96 110 140 52 168 34C176 29 183 35 187 49C195 79 201 117 207 150" />
+          <!-- Crossbar, drawn after the pen lifts, as you would by hand. -->
+          <path class="intro__stroke" pathLength="1" style="--delay:1.19s;--dur:.21s"
+            d="M96 118C130 105 176 105 214 114" />
+          <!-- "man", joined up the way cursive actually runs. -->
+          <path class="intro__stroke" pathLength="1" style="--delay:1.40s;--dur:.72s"
+            d="M216 150C212 120 224 103 238 106C250 109 250 130 248 150C246 120 258 103 272 106C284 109 284 130 282 150C281 134 290 108 322 106C310 96 292 106 291 124C290 142 306 152 318 142C324 137 324 118 322 106C321 122 321 140 326 150C325 126 335 103 349 106C361 109 361 130 359 150" />
+          <!-- The tail. -->
+          <path class="intro__stroke" pathLength="1" style="--delay:2.12s;--dur:.28s"
+            d="M359 150C390 155 425 151 455 143C478 137 492 128 504 116" />
+        </g>
+
+        <circle class="intro__tip" r="2.2">
+          <animateMotion dur="1.7s" begin="0.7s" fill="freeze" calcMode="linear">
+            <mpath href="#intro-track" />
+          </animateMotion>
+        </circle>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===================== Hero ===================== -->
+  <header class="hero">
+    <div class="hero__card">
+
+      <div class="hero__fx" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="hero__beams">
+          <div class="hero__beam"></div>
+          <div class="hero__beam"></div>
+          <div class="hero__beam"></div>
+          <div class="hero__beam"></div>
+        </div>
+        <div class="hero__grain"></div>
+      </div>
+
+      <div class="hero__top hero-in" style="--i:0">
+        <div class="idcard">
+          <img class="idcard__img" data-src="hero.portrait" src="" alt="Aman">
+          <div>
+            <div class="idcard__name" data-text="brand.name">Cuts by Aman</div>
+            <div class="idcard__role" data-text="brand.role">Video Editor &amp; Motion Designer</div>
+          </div>
+        </div>
+
+        <nav class="hero__nav" aria-label="Primary">
+          <div id="hero-socials"></div>
+          <a class="btn btn--ghost" href="about-me.html">About Me</a>
+          <a class="btn btn--ghost hero__nav-extra" href="#testimonials">Testimonials</a>
+          <a class="btn btn--ghost" data-href="brand.calendly" href="#" target="_blank" rel="noopener">Book a Call</a>
+        </nav>
+      </div>
+
+      <div class="hero__body">
+        <div class="hero__copy">
+          <span class="hero__status hero-in" style="--i:0">
+            <span class="hero__dot" aria-hidden="true"></span>
+            <span data-text="hero.availability">Available for new projects</span>
+          </span>
+
+          <h1 class="h-display hero-in" style="--i:1" data-accent-of="hero.headline"
+            data-accent="hero.accent">
+            Turning Raw Footage Into Stories That <span class="serif">Hold Attention</span>
+          </h1>
+
+          <p class="lede hero-in" style="--i:2" data-text="hero.intro"></p>
+
+          <div class="hero__actions hero-in" style="--i:3">
+            <a class="btn btn--primary" href="#projects">
+              See My Work
+              <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" data-href="brand.calendly" href="#" target="_blank" rel="noopener">Let's Talk</a>
+          </div>
+
+          <!-- Proof, pulled from the same numbers as the stats row further down. -->
+          <div class="hero__proof hero-in" style="--i:4" id="hero-proof"></div>
+        </div>
+
+        <div class="hero__portrait-wrap hero-in-portrait">
+          <img class="hero__portrait" data-src="hero.portrait" src="" alt="Portrait of Aman" fetchpriority="high">
+          <span class="hero__badge" data-text="hero.badge"></span>
+        </div>
+      </div>
+
+      <a class="hero__scroll hero-in" style="--i:5" href="#projects">
+        <span>See the work</span>
+        <span class="hero__scroll-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M6 13l6 6 6-6" />
+          </svg>
+        </span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ===================== Tools ===================== -->
+  <section class="tools" aria-label="Tools I use">
+    <p class="tools__label">Tools I use on a daily basis.</p>
+    <div id="tools"></div>
+  </section>
+
+  <!-- ===================== Projects ===================== -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <h2 class="h-section" data-accent-of="projects.heading" data-accent="projects.accent">Projects</h2>
+        <p class="lede" data-text="projects.intro"></p>
+      </div>
+      <div id="projects-body"></div>
+    </div>
+  </section>
+
+  <!-- ===================== Testimonials ===================== -->
+  <section class="section" id="testimonials">
+    <div class="wrap">
+      <div id="stats"></div>
+
+      <div class="section__head reveal" style="margin-top: clamp(56px, 8vw, 96px); margin-bottom: 0;">
+        <h2 class="h-section" id="testimonials-heading">
+          Look at what my <span class="serif">clients</span> have to say about working with me.
+        </h2>
+      </div>
+
+      <div id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta__card reveal">
+        <div class="cta__text">
+          <h2 class="h-section">Up for a <span class="serif">chat?</span></h2>
+          <p class="lede" style="margin-top: 16px;">
+            Got a project, or just want to see if we click? Grab a slot and tell me what you're making.
+          </p>
+        </div>
+        <div class="cta__actions">
+          <a class="btn btn--primary" data-href="brand.calendly" href="#" target="_blank" rel="noopener">
+            Click to Connect
+            <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a class="btn btn--ghost" href="about-me.html">About Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div id="footer-socials"></div>
+        <p class="footer__copy" id="footer-copy"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+
+</html>
