@@ -212,29 +212,19 @@ h1, h2, h3, h4 {
 }
 .intro__stroke {
   stroke: #efece6;
-  stroke-width: 2.6;
+  /* Sized in viewBox units against the traced artwork, which fills the box
+     edge to edge, so this is heavier than a hand-drawn path would need. */
+  stroke-width: 5.6;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   /* --delay and --dur are set per stroke in the markup. */
   animation: intro-draw var(--dur, 0.3s) cubic-bezier(0.4, 0, 0.5, 1) var(--delay, 0s) forwards;
 }
-.intro__tip {
-  fill: #fffaf0;
-  opacity: 0;
-  filter: drop-shadow(0 0 6px rgba(255, 250, 240, 0.85));
-  animation: intro-tip 1.8s ease 0.7s forwards;
-}
-
 @keyframes intro-word {
   from { opacity: 0; transform: translateY(9px); }
   to   { opacity: 1; transform: none; }
 }
 @keyframes intro-draw { to { stroke-dashoffset: 0; } }
-@keyframes intro-tip {
-  0%       { opacity: 0; }
-  6%, 92%  { opacity: 0.9; }
-  100%     { opacity: 0; }
-}
 @keyframes intro-lift {
   to { transform: translateY(-101%); visibility: hidden; }
 }

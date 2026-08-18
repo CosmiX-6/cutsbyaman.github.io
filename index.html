@@ -51,39 +51,54 @@
         <span class="intro__word" style="--i:1">This</span>
         <span class="intro__word" style="--i:2">is</span>
       </span>
-      <!-- One path per pen stroke. SVG restarts a dash pattern on every subpath,
-           so a single multi-part path would draw its letters out of order. Each
-           stroke instead carries its own delay and duration, sized to its
-           length, which adds up to one continuous 1.7s signature. -->
-      <svg class="intro__sig" viewBox="0 0 520 200" fill="none" aria-hidden="true">
-        <defs>
-          <path id="intro-track"
-            d="M70 158C96 110 140 52 168 34C176 29 183 35 187 49C195 79 201 117 207 150
-               M96 118C130 105 176 105 214 114
-               M216 150C212 120 224 103 238 106C250 109 250 130 248 150C246 120 258 103 272 106C284 109 284 130 282 150C281 134 290 108 322 106C310 96 292 106 291 124C290 142 306 152 318 142C324 137 324 118 322 106C321 122 321 140 326 150C325 126 335 103 349 106C361 109 361 130 359 150
-               M359 150C390 155 425 151 455 143C478 137 492 128 504 116" />
-        </defs>
-
+      <!-- One path per pen stroke, centreline-traced from the signature
+           artwork. SVG restarts a dash pattern on every subpath, so a single
+           multi-part path would draw its letters out of order. Each stroke
+           instead carries its own delay and duration, sized to its length, so
+           the whole hand runs back to back. -->
+      <svg class="intro__sig" viewBox="0 0 600 254" fill="none" aria-hidden="true">
         <g stroke-linecap="round" stroke-linejoin="round">
-          <!-- The capital: up the left leg, over the apex, down the right. -->
-          <path class="intro__stroke" pathLength="1" style="--delay:.70s;--dur:.49s"
-            d="M70 158C96 110 140 52 168 34C176 29 183 35 187 49C195 79 201 117 207 150" />
-          <!-- Crossbar, drawn after the pen lifts, as you would by hand. -->
-          <path class="intro__stroke" pathLength="1" style="--delay:1.19s;--dur:.21s"
-            d="M96 118C130 105 176 105 214 114" />
-          <!-- "man", joined up the way cursive actually runs. -->
-          <path class="intro__stroke" pathLength="1" style="--delay:1.40s;--dur:.72s"
-            d="M216 150C212 120 224 103 238 106C250 109 250 130 248 150C246 120 258 103 272 106C284 109 284 130 282 150C281 134 290 108 322 106C310 96 292 106 291 124C290 142 306 152 318 142C324 137 324 118 322 106C321 122 321 140 326 150C325 126 335 103 349 106C361 109 361 130 359 150" />
-          <!-- The tail. -->
-          <path class="intro__stroke" pathLength="1" style="--delay:2.12s;--dur:.28s"
-            d="M359 150C390 155 425 151 455 143C478 137 492 128 504 116" />
+          <!-- flourish loop, up to the apex -->
+          <path class="intro__stroke" pathLength="1" style="--delay:0.70s;--dur:1.02s"
+            d="M310.2 162.7C310.4 161.5 304.3 169.5 311.5 155.7C318.8 141.9 346.4 94.0 353.8 80.0C361.2 65.9 356.9 72.3 355.9 71.2C355.0 70.2 361.9 61.4 348.1 73.4C334.3 85.5 287.1 131.2 273.2 143.5C259.4 155.8 266.1 147.7 265.0 147.0C263.8 146.3 264.0 144.5 266.3 139.2C268.5 133.8 275.6 122.4 278.5 114.8C281.4 107.2 283.0 101.4 283.7 93.4C284.3 85.5 284.3 75.4 282.4 67.3C280.5 59.3 275.6 50.5 272.4 45.1C269.2 39.8 266.6 38.1 263.2 35.1C259.9 32.1 259.4 30.8 252.3 27.3C245.2 23.8 230.8 17.1 220.6 14.2C210.3 11.3 201.3 10.5 191.0 9.9C180.6 9.2 167.9 9.6 158.3 10.3C148.7 11.0 143.0 11.9 133.5 14.2C124.0 16.5 111.5 20.3 101.3 24.2C91.1 28.2 81.3 32.7 72.1 37.7C63.0 42.7 54.6 47.9 46.4 54.3C38.3 60.7 29.0 69.4 23.4 76.0C17.7 82.6 14.9 87.7 12.5 93.9C10.1 100.1 8.9 107.7 9.0 113.0C9.1 118.4 10.2 121.5 12.9 126.1C15.7 130.7 21.4 137.1 25.5 140.9C29.7 144.7 30.5 145.7 37.7 149.2C44.9 152.6 59.4 158.7 68.6 161.8C77.9 164.8 80.8 165.6 93.4 167.5C106.1 169.3 129.2 171.8 144.4 172.7C159.5 173.5 169.6 173.3 184.4 172.7C199.2 172.1 223.9 169.6 233.2 169.2C242.5 168.8 239.0 170.3 240.1 170.5" />
+          <!-- right leg of the A -->
+          <path class="intro__stroke" pathLength="1" style="--delay:1.72s;--dur:0.10s"
+            d="M306.3 164.0C303.0 172.6 290.9 202.2 286.3 215.8C281.6 229.3 279.8 240.4 278.5 245.4" />
+          <!-- left leg of the A -->
+          <path class="intro__stroke" pathLength="1" style="--delay:1.82s;--dur:0.09s"
+            d="M240.1 170.5C239.9 171.5 247.3 167.5 238.4 176.6C229.5 185.7 195.2 217.2 186.6 225.3" />
+          <path class="intro__stroke" pathLength="1" style="--delay:1.91s;--dur:0.03s"
+            d="M265.0 147.0C263.1 149.1 255.8 156.4 253.6 159.6C251.5 162.8 252.2 165.1 251.9 166.1" />
+          <!-- crossbar -->
+          <path class="intro__stroke" pathLength="1" style="--delay:1.93s;--dur:0.06s"
+            d="M306.3 164.0C298.0 164.5 265.3 167.1 256.3 167.5C247.2 167.8 252.6 166.4 251.9 166.1" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.00s;--dur:0.01s"
+            d="M240.1 170.5C242.1 169.8 249.9 166.9 251.9 166.1" />
+          <!-- into the m -->
+          <path class="intro__stroke" pathLength="1" style="--delay:2.01s;--dur:0.05s"
+            d="M310.2 162.7C314.9 162.7 331.1 162.3 338.1 163.1C345.1 163.9 350.1 166.7 352.5 167.5" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.06s;--dur:0.01s"
+            d="M345.9 187.9C347.0 186.2 351.4 179.6 352.5 177.9" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.07s;--dur:0.06s"
+            d="M378.1 180.5C378.6 178.1 380.5 169.4 380.7 166.1C381.0 162.9 380.5 161.6 379.4 160.9C378.4 160.3 377.6 159.8 374.2 162.2C370.8 164.7 362.6 173.1 359.0 175.7C355.4 178.3 353.5 177.5 352.5 177.9" />
+          <!-- m -->
+          <path class="intro__stroke" pathLength="1" style="--delay:2.13s;--dur:0.09s"
+            d="M378.1 180.5C379.3 180.2 382.1 180.7 385.1 178.8C388.1 176.8 393.4 170.6 396.4 168.8C399.5 166.9 402.6 165.1 403.4 167.5C404.2 169.8 401.1 179.7 401.2 183.1C401.4 186.5 402.4 187.0 404.3 187.9C406.1 188.8 407.9 189.5 412.1 188.3C416.3 187.2 426.6 182.2 429.5 180.9" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.22s;--dur:0.04s"
+            d="M454.3 179.6C451.0 181.2 438.3 187.9 434.3 189.2C430.3 190.5 431.2 188.9 430.4 187.5C429.6 186.1 429.6 182.0 429.5 180.9" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.26s;--dur:0.06s"
+            d="M454.3 179.6C455.2 177.0 459.1 166.7 459.5 163.5C460.0 160.4 458.2 161.4 456.9 160.9C455.7 160.5 454.5 160.1 452.1 160.9C449.8 161.7 446.8 162.4 443.0 165.7C439.2 169.0 431.8 178.4 429.5 180.9" />
+          <!-- a -->
+          <path class="intro__stroke" pathLength="1" style="--delay:2.32s;--dur:0.05s"
+            d="M454.3 179.6C454.7 180.7 455.1 184.6 456.5 186.2C457.9 187.7 460.0 188.5 462.6 188.8C465.1 189.1 467.7 189.3 471.7 187.9C475.7 186.5 482.7 181.9 486.5 180.5C490.4 179.1 493.4 179.8 494.8 179.6" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.37s;--dur:0.02s"
+            d="M503.9 164.0C502.5 166.6 496.7 177.0 495.2 179.6" />
+          <path class="intro__stroke" pathLength="1" style="--delay:2.39s;--dur:0.04s"
+            d="M495.2 180.1C496.7 179.7 500.3 180.4 503.9 177.9C507.6 175.4 513.7 167.6 517.0 165.3C520.3 163.0 522.4 164.2 523.5 164.0" />
+          <!-- the tail -->
+          <path class="intro__stroke" pathLength="1" style="--delay:2.43s;--dur:0.12s"
+            d="M591.0 154.8C589.0 156.6 584.5 161.4 579.2 165.3C574.0 169.2 565.2 175.0 559.7 178.3C554.1 181.7 550.6 183.5 545.7 185.3C540.9 187.1 534.0 188.7 530.5 189.2C526.9 189.7 526.1 189.2 524.4 188.3C522.7 187.5 520.2 188.1 520.0 184.0C519.9 179.9 522.9 167.3 523.5 164.0" />
         </g>
-
-        <circle class="intro__tip" r="2.2">
-          <animateMotion dur="1.7s" begin="0.7s" fill="freeze" calcMode="linear">
-            <mpath href="#intro-track" />
-          </animateMotion>
-        </circle>
       </svg>
     </div>
   </div>
