@@ -243,7 +243,7 @@ window.SITE_CONFIG = {
     experience: [
       {
         date: "Jan 2026 - Present",
-        role: "Video Editor",
+        role: "Video Editor / AI Video Creator",
         org: "Emergent",
         url: "https://www.linkedin.com/company/emergentlabs/",
         type: "Full-time",
@@ -268,7 +268,7 @@ window.SITE_CONFIG = {
       },
       {
         date: "Dec 2022 - Apr 2024",
-        role: "Video Editor",
+        role: "Video Editor / Content Editor",
         org: "Architmehrotra.in",
         url: "https://www.instagram.com/architmehrotra.in/",
         points: [
@@ -279,7 +279,7 @@ window.SITE_CONFIG = {
       },
       {
         date: "Feb 2022 - Apr 2024",
-        role: "Video Editor",
+        role: "Content Editor",
         org: "Caribbean Focus Lifestyle",
         url: "https://www.youtube.com/@CaribbeanFocus",
         type: "US",
@@ -291,7 +291,7 @@ window.SITE_CONFIG = {
       },
       {
         date: "Aug 2023 - Jan 2024",
-        role: "Video Editor",
+        role: "Jr. Video Editor",
         org: "The Perry Group | REAL",
         url: "https://www.linkedin.com/company/theperrygroup/",
         type: "US",
