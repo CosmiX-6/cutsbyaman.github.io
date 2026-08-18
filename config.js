@@ -220,15 +220,11 @@ window.SITE_CONFIG = {
       "Where I have worked, what I work on, and the kit I reach for. If it looks like a fit, " +
       "the calendar's open.",
     bio: [
-      "I'm Aman, a video editor and AI video creator based in Bengaluru. Over the past four " +
-      "years I've made content for brands and creators, shooting and editing AI ad videos, " +
-      "product demos, social media content and podcasts.",
-      "Right now I'm at Emergent, where I own the video pipeline end to end and ship across " +
-      "organic, performance, influencer and product launch formats. Before that I spent close " +
-      "to two years at Vyapar App running the same pipeline and building Meta ad campaigns " +
-      "with the performance team.",
-      "What I care about is storytelling, pacing and color. The edit should carry the point, " +
-      "not decorate it.",
+      "Creative Video Editor crafting impactful content for brands and creators. Skilled in " +
+      "shooting and editing AI ad videos, product demos, social media content, and podcasts, " +
+      "blending storytelling, pacing, and color mastery to create visually compelling work. " +
+      "Dedicated to delivering high-impact videos that elevate engagement and strengthen " +
+      "brand presence.",
     ],
 
     languages: "English & Hindi",

@@ -898,6 +898,8 @@ h1, h2, h3, h4 {
 }
 .page-head__body { position: relative; z-index: 2; padding-block: clamp(44px, 7vw, 86px); }
 .page-head__body .lede { margin-top: 20px; }
+/* The profile now sits inside the head card, under the heading. */
+.page-head__body .profile { margin-top: clamp(38px, 5vw, 64px); }
 
 .profile {
   display: grid;
